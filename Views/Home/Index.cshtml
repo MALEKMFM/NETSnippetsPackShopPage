@@ -1,8 +1,67 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = ".NET Productivity Snippet Pack";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section style="padding:3em 0; background: #20232a; color:#fff; text-align:center;">
+    <img src="~/assets/logo.png" alt="Logo" style="max-width:120px; margin-bottom:1.5em;">
+    <h1>.NET Productivity Snippet Pack</h1>
+    <p style="font-size:1.3em; max-width:600px; margin:auto;">
+        50+ reusable C#/.NET code snippets for APIs, data, DI, and more. Copy, paste, and accelerate your workflow.<br>
+        <strong>MIT licensed</strong> – Use in commercial projects.
+    </p>
+    <a href="https://yourgumroadlink.com" target="_blank" class="btn" style="background:#36d399; color:#20232a; font-weight:bold; border-radius:8px; padding:0.8em 2em; display:inline-block; margin-top:1.5em; font-size:1.2em;">Buy Now on Gumroad</a>
+</section>
+
+<section style="padding:2em 0; background: #f6f8fa; color:#20232a;">
+    <div style="max-width:800px; margin:auto;display:flex;flex-wrap:wrap;gap:2em;">
+        <div style="flex:1 1 300px;">
+            <h2>What’s Included</h2>
+            <ul style="font-size:1.1em;list-style:square;">
+                <li>API & HTTP helpers</li>
+                <li>EF Core & Dapper data access</li>
+                <li>Authentication & DI</li>
+                <li>Error handling & logging</li>
+                <li>LINQ power tricks</li>
+                <li>VS & VS Code importables</li>
+                <li>Clear, category-based folders</li>
+            </ul>
+        </div>
+        <div style="flex:1 1 300px;">
+            <h2>What You Get</h2>
+            <ul style="font-size:1.1em;">
+                <li>Instant access (.zip download)</li>
+                <li>Easy-to-follow documentation</li>
+                <li>Commercial & client usage rights</li>
+                <li>Lifetime updates for early buyers!</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section style="padding:3em 0; background: #fff; text-align:center;">
+    <h2>Sneak Peek</h2>
+    <img src="~/assets/folder_structure.png" alt="Folder structure" style="max-width:80%;box-shadow:0 3px 20px #6661;">
+    <div style="margin:1em 0;display:flex;justify-content:center;gap:1.5em;flex-wrap:wrap;">
+        <img src="~/assets/snippet_in_vs.png" alt="VS Editor Example" style="max-width:300px;border-radius:10px;">
+        <img src="~/assets/snippet_in_vscode.png" alt="VS Code Example" style="max-width:300px;border-radius:10px;">
+    </div>
+</section>
+
+<section style="background:#f6f8fa; padding:3em 0;">
+    <div style="max-width:800px;margin:auto;">
+        <h2>FAQ</h2>
+        <h4>How do I use these snippets?</h4>
+        <p>Just copy and paste them into your C# project, or import the included VS/VS Code snippet files for instant shortcut coding.</p>
+        <h4>Can I use them for client work?</h4>
+        <p>Yes – everything is MIT licensed for commercial use.</p>
+        <h4>What if I want more snippets?</h4>
+        <p>Email me! I’ll be updating and expanding the pack based on feedback from early buyers.</p>
+    </div>
+</section>
+
+<footer style="padding:2em; text-align:center;">
+    <p>© @DateTime.Now.Year - Your Name · <a href="mailto:your@email.com">Contact</a></p>
+    <small>
+        Not affiliated with Microsoft or the .NET Foundation.
+    </small>
+</footer>
