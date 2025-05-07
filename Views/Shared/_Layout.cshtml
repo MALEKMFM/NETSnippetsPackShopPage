@@ -14,7 +14,7 @@
 <body>
     <!-- Sticky Buy Now Button at Top, Hidden by Default -->
     <a href="https://your-gumroad-link.com/" target="_blank"
-       class="sticky-buy-btn" id="sticky-buy-btn" style="display:none;">
+       class="sticky-buy-btn" id="sticky-buy-btn">
         <i class="fas fa-shopping-cart" aria-label="Buy Now"></i>
         I Want This! – $10
     </a>
@@ -54,16 +54,40 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          var btn = document.getElementById('sticky-buy-btn');
-          window.addEventListener('scroll', function() {
-            if (window.scrollY > 455) {
-              btn.style.display = 'flex';
-            } else {
-              btn.style.display = 'none';
+                document.addEventListener("DOMContentLoaded", function () {
+            var btn = document.getElementById('sticky-buy-btn');
+
+            function toggleStickyBtn() {
+                if (window.scrollY > 457) {
+                    btn.classList.add('animate-in');
+                } else {
+                    btn.classList.remove('animate-in');
+                }
             }
-          });
+
+            window.addEventListener('scroll', toggleStickyBtn);
+
+            // Optional: make sure state is correct if page loads scrolled down
+            toggleStickyBtn();
         });
+        // document.addEventListener("DOMContentLoaded", function() {
+        //   var btn = document.getElementById('sticky-buy-btn');
+        //   // var isVisible = false;
+        //   window.addEventListener('scroll', function() {
+        //     if (window.scrollY > 455) {
+        //         if(!btn.classList.contains('animate-in')){
+        //             btn.classList.add('animate-in');
+        //             // isVisible = true;
+        //             console.log("ss");
+        //         }
+        //     } else {
+        //          if(btn.classList.contains('animate-in')){
+        //              btn.classList.remove('animate-in');
+        //              // isVisible = false;
+        //          }         
+        //     }
+        //   });
+        // });
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

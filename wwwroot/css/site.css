@@ -54,7 +54,7 @@ body {
 
 .sticky-buy-btn {
     position: fixed;
-    top: 32px; /* Appear a bit below the top edge */
+    top: 32px;
     left: 1%;
     background: #232946;
     color: #eebbc3;
@@ -69,16 +69,25 @@ body {
     gap: 0.8em;
     border-radius: 27px;
     border: 2px solid #ffe066;
-    transition: background 0.18s, color 0.18s, box-shadow 0.2s, opacity 0.28s;
-    opacity: 0.97;
-    pointer-events: auto;
+    /* Animation defaults: */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-24px) scale(0.97);
+    transition: background 0.18s, color 0.18s, box-shadow 0.2s, opacity 0.28s, transform 0.35s cubic-bezier(.52,1.64,.37,.98);
 }
+
+    .sticky-buy-btn.animate-in { /* NEW: When active/visible */
+        opacity: 0.97;
+        pointer-events: auto;
+        transform: translateY(0) scale(1.03);
+    }
 
     .sticky-buy-btn:hover {
         background: #3e92cc;
         color: #232946;
         text-decoration: none;
         border-color: #fff;
+        transform: scale(1.08);
     }
 
 /* Responsive: shrink on mobile */
