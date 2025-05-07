@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/NETSnippetsPackShopPage.styles.css" asp-append-version="true" />
 </head>
+
 <body>
+    <!-- Sticky Buy Now Button at Top, Hidden by Default -->
+    <a href="https://your-gumroad-link.com/" target="_blank"
+       class="sticky-buy-btn" id="sticky-buy-btn" style="display:none;">
+        <i class="fas fa-shopping-cart" aria-label="Buy Now"></i>
+        I Want This! – $10
+    </a>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -46,7 +53,18 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          var btn = document.getElementById('sticky-buy-btn');
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 455) {
+              btn.style.display = 'flex';
+            } else {
+              btn.style.display = 'none';
+            }
+          });
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
