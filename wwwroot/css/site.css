@@ -17,10 +17,76 @@ html {
   min-height: 100%;
 }
 
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-section {
+    padding: 3em 0;
+    text-align: center;
+    background: transparent;
+}
+
+.hero-logo {
+    max-width: 120px;
+    margin-bottom: 1.5em;
+    filter: drop-shadow(0 4px 10px #12182f99);
+}
+
+.hero-title {
+    font-size: 2.5em;
+    color: #ffe066;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.2em;
+    text-shadow: 0 0 24px #3e92cc44;
+}
+
+.hero-desc {
+    font-size: 1.25em;
+    max-width: 600px;
+    margin: auto;
+    color: #f4faff;
+}
+
+.hero-btn, .btn.hero-btn {
+    background: linear-gradient(100deg,#3e92cc 70%, #8d7ff8 100%);
+    color: #232946;
+    font-weight: bold;
+    border-radius: 2em;
+    padding: 0.8em 2.1em;
+    margin-top: 1.6em;
+    font-size: 1.18em;
+    box-shadow: 0 7px 18px #23294633;
+    transition: background .2s, transform .2s;
+    border: none;
+    display: inline-block;
+}
+
+    .hero-btn:hover {
+        background: #ffe066;
+        color: #232946;
+        transform: translateY(-3px) scale(1.05);
+    }
+
 body {
     margin-bottom: 60px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(120deg, #232946 0%, #2e4374 100%, #12182f 100%);
+    background-size: 200% 200%;
+    animation: bgMove 18s ease-in-out infinite;
+    font-family: 'Noto Sans', Arial, sans-serif;
 }
 
 .feature-icon {
