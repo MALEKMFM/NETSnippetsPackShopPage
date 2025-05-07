@@ -20,3 +20,34 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bs-primary-bg-subtle, #e9f5ff);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .features .col-md-4 {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .features {
+        background: #161b22 !important;
+    }
+
+        .features h2, .features p, .features h5 {
+            color: #f4faff !important;
+        }
+
+    .feature-icon {
+        background: #223 !important;
+    }
+}
