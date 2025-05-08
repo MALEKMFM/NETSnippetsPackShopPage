@@ -69,7 +69,7 @@
 <body>
     <!-- Sticky Buy Now Button at Top, Hidden by Default -->
     <a href="https://your-gumroad-link.com/" target="_blank"
-       class="sticky-buy-btn" id="sticky-buy-btn">
+       class="sticky-buy-btn animate-in" id="sticky-buy-btn">
         <i class="fas fa-shopping-cart" aria-label="Buy Now"></i>
         I Want This! – $10
     </a>
@@ -113,7 +113,8 @@
             var btn = document.getElementById('sticky-buy-btn');
 
             function toggleStickyBtn() {
-                if (window.scrollY > 457) {
+                if (window.scrollY > 455) {
+                    console.log("Button shows up");
                     btn.classList.add('animate-in');
                 } else {
                     btn.classList.remove('animate-in');
@@ -143,6 +144,21 @@
         //     }
         //   });
         // });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll('.reveal');
+            function revealOnScroll() {
+                var winBottom = window.innerHeight + window.scrollY;
+                reveals.forEach(function(el) {
+                    if (el.getBoundingClientRect().top + window.scrollY < winBottom - 100) {
+                        el.classList.add('visible');
+                    }
+                });
+            }
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll();
+        });
     </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
