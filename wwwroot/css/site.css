@@ -31,10 +31,71 @@ html {
     }
 }
 
+.blob-bg{
+    position: absolute;
+    top: -40px; 
+    right: 0;
+    left: 0; 
+    width: 50vw; 
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.blob-bg img, .blob-bg svg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 0.18;
+}
+
+.typewriter-tagline {
+    font-family: 'Fira Mono', 'Noto Mono', 'Consolas', monospace;
+    color: lightskyblue;
+    font-size: 1.17em;
+    letter-spacing: 0.05em;
+    min-height: 1.8em;
+    white-space: pre;
+    border-right: 2.5px solid #3e92cc; /* blinking caret */
+    animation: blinkCaret 0.85s steps(1) infinite;
+    margin-bottom: 1.2em;
+}
+
+@keyframes blinkCaret {
+    0%, 100% {
+        border-color: #3e92cc;
+    }
+
+    66% {
+        border-color: transparent;
+    }
+}
+
 .hero-section {
-    padding: 3em 0;
-    text-align: center;
+    padding: 7em 0;
+    text-align: start;
     background: transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-section > *:not(.blob-bg) {
+        position: relative;
+        z-index: 5;
+}
+
+@media (max-width: 768px){
+    .blob-bg{
+        width: 90vw;
+        right:-30vw;
+        opacity: 0.10;
+    }
 }
 
 .hero-logo {
@@ -118,6 +179,32 @@ html {
     flex-wrap: wrap;
     gap: 2em;
 }
+
+.darkmode-switch {
+    position: fixed;
+    bottom: 28px;
+    right: 32px;
+    z-index: 11000;
+    background: #232946;
+    color: #ffe066;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.6em;
+    box-shadow: 0 4px 22px #2229;
+    transition: background .2s, color .2s, box-shadow .22s;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .darkmode-switch:hover {
+        background: #3e92cc;
+        color: #232946;
+    }
 
 .info-card {
     flex: 1 1 280px;
@@ -241,7 +328,7 @@ footer {
 .reveal {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 1.5s cubic-bezier(.37,1.52,.42,1), transform 1.5s cubic-bezier(.37,1.52,.42,1);
+    transition: opacity 1s cubic-bezier(.37,1.52,.42,1), transform 1s cubic-bezier(.37,1.52,.42,1);
 }
 
     .reveal.visible {
@@ -255,7 +342,7 @@ footer {
     -moz-osx-font-smoothing: grayscale;
     background: linear-gradient(120deg, #232946 0%, #2e4374 100%, #12182f 100%);
     background-size: 200% 200%;
-    animation: bgMove 18s ease-in-out infinite;
+    animation: bgMove 10s ease-in-out infinite;
     font-family: 'Noto Sans', Arial, sans-serif;
 }
 
@@ -338,3 +425,85 @@ footer {
         top: 10px;
     }
 }
+
+body.light-mode {
+    background: linear-gradient(120deg,#f6f8fa 0%,#e6e9ef 100%) !important;
+    color: #232946 !important;
+}
+
+    body.light-mode .hero-section,
+    body.light-mode .testimonial-section,
+    body.light-mode .info-section,
+    body.light-mode .sneak-section,
+    body.light-mode .faq-section,
+    body.light-mode .features {
+        background: #fff !important;
+        color: #232946 !important;
+    }
+
+    body.light-mode .info-card,
+    body.light-mode .feature-icon {
+        background: #f5f6fa !important;
+        color: #232946 !important;
+        box-shadow: 0 6px 24px #aaa4;
+    }
+
+    body.light-mode .hero-title,
+    body.light-mode .features h2,
+    body.light-mode .features h5,
+    body.light-mode .testimonial-heading,
+    body.light-mode .faq-section h2,
+    body.light-mode .faq-section h4 {
+        color: #3e92cc !important;
+        text-shadow: none !important;
+    }
+
+    body.light-mode .hero-desc,
+    body.light-mode .features p,
+    body.light-mode .faq-section p,
+    body.light-mode .testimonial-section p,
+    body.light-mode .info-card,
+    body.light-mode .info-card ul,
+    body.light-mode .info-card h2 {
+        color: #232946 !important;
+    }
+
+    body.light-mode .hero-btn,
+    body.light-mode .btn.hero-btn {
+        background: linear-gradient(92deg, #8d7ff8 60%, #3e92cc 100%) !important;
+        color: #232946 !important;
+    }
+
+        body.light-mode .hero-btn:hover,
+        body.light-mode .btn.hero-btn:hover {
+            background: #232946 !important;
+            color: #ffe066 !important;
+        }
+
+    body.light-mode .gradient-text {
+        background: linear-gradient(92deg, #3e92cc 20%, #8d7ff8 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    body.light-mode .blob-bg img,
+    body.light-mode .blob-bg svg {
+        opacity: 0.10 !important;
+    }
+
+    body.light-mode .version-badge {
+        background: #eef0f7cc !important;
+        color: #3e92cc !important;
+        border: 1.5px solid #8d7ff8 !important;
+    }
+
+    body.light-mode .carousel-item blockquote {
+        background: #f2f4fc !important;
+        color: #232946 !important;
+        border-left: 5px solid #3e92cc !important;
+    }
+
+    body.light-mode .feature-icon i {
+        color: #3e92cc !important;
+    }

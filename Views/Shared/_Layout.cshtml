@@ -99,6 +99,7 @@
             @RenderBody()
         </main>
     </div>
+    <button class="darkmode-switch" id="darkmode-switch" title="Toggle dark/light mode">🌓</button>
 
     <footer class="border-top footer text-muted">
         <div class="container">
@@ -160,6 +161,63 @@
             revealOnScroll();
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lines = [
+                "Supercharge your C# coding 🚀",
+                "Import. Code. Win.",
+                "Cleaner .NET projects in seconds.",
+                "Crafted for real-world devs.",
+                "Just what .NET developers need!"
+            ];
+            let currentLine = 0, charIdx = 0, isDeleting = false, pause = false;
+            const el = document.getElementById('typewriter-tagline');
+
+            function typeIt() {
+                let display = lines[currentLine].substring(0, charIdx);
+                el.textContent = display;
+
+                if (!isDeleting && charIdx < lines[currentLine].length) {
+                    charIdx++;
+                    setTimeout(typeIt, 65);
+                }
+                else if (isDeleting && charIdx > 0) {
+                    charIdx--;
+                    setTimeout(typeIt, 35);
+                }
+                else if (!isDeleting && charIdx === lines[currentLine].length && !pause) {
+                    pause = true;
+                    setTimeout(() => { isDeleting = true; pause = false; typeIt(); }, 900);
+                }
+                else if (isDeleting && charIdx === 0 && !pause) {
+                    pause = true;
+                    currentLine = (currentLine + 1) % lines.length;
+                    setTimeout(() => { isDeleting = false; pause = false; typeIt(); }, 250);
+                }
+            }
+            typeIt();
+        });
+    </script>
+
+    <script>
+        (function() {
+            // Optional: Save mode between visits
+            if(localStorage.getItem("pref-theme")==="light") document.body.classList.add('light-mode');
+            else if(localStorage.getItem("pref-theme")==="dark") document.body.classList.remove('light-mode');
+
+            document.getElementById("darkmode-switch").addEventListener("click", function() {
+                document.body.classList.toggle('light-mode');
+                // Persist preference
+                if(document.body.classList.contains("light-mode")){
+                    localStorage.setItem("pref-theme", "light");
+                } else {
+                    localStorage.setItem("pref-theme", "dark");
+                }
+            });
+        })();
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
