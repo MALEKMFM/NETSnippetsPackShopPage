@@ -56,15 +56,15 @@
             <button class="copy-btn" onclick="copyDemoCode()">Copy</button>
         </div>
 <pre id="demo-snippet"><code class="cs">
-public class WeatherResponse
-{
-    public DateTime Date { get; set; }
-    public float TempC { get; set; }
-    public string? Summary { get; set; }
-}
+// Simple GET: HttpClient API Call
 
-// Usage
-var response = new WeatherResponse { Date = DateTime.Now, TempC = 22.5f, Summary = "Sunny" };
+using var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/data");
+response.EnsureSuccessStatusCode();
+var json = await response.Content.ReadAsStringAsync();
+
+// Optional: Deserialize
+// var data = JsonSerializer.Deserialize<MyData>(json);
 </code></pre>
     </div>
 </section>
