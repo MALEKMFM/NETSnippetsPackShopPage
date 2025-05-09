@@ -56,8 +56,6 @@
             <button class="copy-btn" onclick="copyDemoCode()">Copy</button>
         </div>
 <pre id="demo-snippet"><code class="cs">
-// PostJsonRequest.cs
-// Sends a POST request with a JSON payload and returns the response string.
 public static async Task<string> PostJsonRequest<T>(string url, T payload)
 {
     using var client = new HttpClient();
@@ -65,6 +63,8 @@ public static async Task<string> PostJsonRequest<T>(string url, T payload)
     response.EnsureSuccessStatusCode();
     return await response.Content.ReadAsStringAsync();
 }
+// PostJsonRequest.cs
+// Sends a POST request with a JSON payload and returns the response string.
 </code></pre>
     </div>
 </section>
