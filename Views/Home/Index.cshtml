@@ -56,12 +56,14 @@
             <button class="copy-btn" onclick="copyDemoCode()">Copy</button>
         </div>
 <pre id="demo-snippet"><code class="cs">
-// SimpleGetRequest.cs
-// Makes a GET request to a given URL and returns the response string.
-public static async Task<string> SimpleGetRequest(string url)
+// PostJsonRequest.cs
+// Sends a POST request with a JSON payload and returns the response string.
+public static async Task<string> PostJsonRequest<T>(string url, T payload)
 {
     using var client = new HttpClient();
-    return await client.GetStringAsync(url);
+    var response = await client.PostAsJsonAsync(url, payload);
+    response.EnsureSuccessStatusCode();
+    return await response.Content.ReadAsStringAsync();
 }
 </code></pre>
     </div>
