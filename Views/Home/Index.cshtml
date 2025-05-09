@@ -56,15 +56,13 @@
             <button class="copy-btn" onclick="copyDemoCode()">Copy</button>
         </div>
 <pre id="demo-snippet"><code class="cs">
-// Simple GET: HttpClient API Call
-
-using var client = new HttpClient();
-var response = await client.GetAsync("https://api.example.com/data");
-response.EnsureSuccessStatusCode();
-var json = await response.Content.ReadAsStringAsync();
-
-// Optional: Deserialize
-// var data = JsonSerializer.Deserialize<MyData>(json);
+// SimpleGetRequest.cs
+// Makes a GET request to a given URL and returns the response string.
+public static async Task<string> SimpleGetRequest(string url)
+{
+    using var client = new HttpClient();
+    return await client.GetStringAsync(url);
+}
 </code></pre>
     </div>
 </section>
