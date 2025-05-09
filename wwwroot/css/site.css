@@ -99,6 +99,18 @@ html {
     }
 }
 
+.section-space {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+@media (max-width: 768px) {
+    .section-space {
+        margin-top: 2.2em;
+        margin-bottom: 2.2em;
+    }
+}
+
 .hero-section {
     padding: 7em 0;
     text-align: start;
@@ -257,6 +269,72 @@ html {
         color: #8d7ff8;
     }
 
+.demo-code-glass {
+    background: linear-gradient(120deg,rgba(36,60,133,0.31),rgba(62,146,204,0.13) 85%,rgba(200,220,255,0.09));
+    border-radius: 16px;
+    box-shadow: 0 12px 36px 0 rgba(47,85,151, 0.20);
+    position: relative;
+    margin: 1.7em auto 0 auto;
+    max-width: 570px;
+    padding: 2.1em 1.7em 1.3em 1.7em;
+    backdrop-filter: blur(13px) saturate(135%);
+    -webkit-backdrop-filter: blur(13px) saturate(135%);
+    border: 1.3px solid rgba(150,180,255,0.16);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .6em;
+}
+
+.code-lang {
+    background: #8d7ff8;
+    color: #232946;
+    font-weight: bold;
+    padding: 0.21em 0.8em;
+    border-radius: 8px;
+    font-size: .92em;
+    letter-spacing: .05em;
+    box-shadow: 0 1px 5px #3e92cc18;
+}
+
+.copy-btn {
+    background: #232946;
+    color: #ffe066;
+    border: none;
+    border-radius: 8px;
+    padding: .35em 1.2em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 10px #8d7ff822;
+    transition: background .18s, color .18s;
+}
+
+    .copy-btn:hover, .copy-btn.copied {
+        background: #3e92cc;
+        color: #fff;
+    }
+
+pre {
+    margin: 0;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    font-size: 1.07em;
+    background: transparent;
+    color: #ffe066;
+    overflow-x: auto;
+    padding: 0;
+}
+
+.code-header + pre {
+    border-top: 1.2px solid #3e92cc22;
+    padding-top: 1em;
+}
+
 .sneak-section {
     padding: 3em 0;
     background: #13151a;
@@ -295,6 +373,12 @@ html {
     margin-top: 2.5em;
 }
 
+.feature-card:hover {
+    border-color: #3e92cc;
+    box-shadow: 0 2px 2px 0 #3e92cc99, 0 4px 12px 0 #8d7ff833;
+    border-radius: 15px;
+}
+
     .features h2, .features p, .features h5 {
         color: #ffe066 !important;
         text-shadow: 0 0 12px #8d7ff833;
@@ -304,16 +388,12 @@ html {
     background: linear-gradient(135deg,#3e92cc22 10%, #8d7ff844 90%);
 }
 
-    .feature-icon:hover {
-        transform: translateY(-4px) scale(1.025);
-        box-shadow: 0 16px 48px 0 rgba(62,146,204,0.13);
-    }
-
-    .faq-section {
-        background: #232946;
-        padding: 3em 0;
-        color: blue;
-    }
+.faq-section {
+    background: #232946;
+    padding: 3em 0;
+    color: blue !important;
+    
+}
 
     .faq-section h2, .faq-section h4 {
         color: black;
@@ -529,4 +609,37 @@ body.light-mode {
 
     body.light-mode .feature-icon i {
         color: #3e92cc !important;
+    }
+
+.glass {
+    position: relative;
+    /* Techy blue-tinted glass background */
+    background: linear-gradient(135deg, rgba(36,60,133, 0.38), rgba(75,160,255,0.14) 80%, rgba(200,220,255,0.09));
+    box-shadow: 0 12px 36px 0 rgba(47,85,151, 0.34);
+    border-radius: 18px;
+    /* Glass blur */
+    backdrop-filter: blur(16px) saturate(155%);
+    -webkit-backdrop-filter: blur(16px) saturate(155%);
+    border: 1.6px solid rgba(150,180,255,0.17);
+    /* Slight border glow for "tech" */
+    box-shadow: 0 2px 24px 0 rgba(62,146,204, 0.22), 0 2.5px 18px 0 rgba(90,115,220, 0.08) inset;
+    color: #fff;
+    overflow: hidden;
+}
+
+    .glass:hover, .info-card.glass:hover {
+        border-color: #3e92cc;
+        box-shadow: 0 2px 24px 0 #3e92cc99, 0 4px 32px 0 #8d7ff833;
+    }
+
+    .glass::before {
+        content: "";
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        background: linear-gradient(120deg,rgba(200,250,255,.11) 0%,rgba(255,255,255,.04) 100%);
+        /* optional: for a techy bottom glow */
+        box-shadow: 0 40px 120px 0 rgba(90,190,255,0.09);
+        z-index: 1;
     }

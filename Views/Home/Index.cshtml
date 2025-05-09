@@ -2,7 +2,7 @@
     ViewData["Title"] = ".NET Productivity Snippet Pack";
 }
 
-<section class="hero-section reveal" style="padding:3em 0; background: #20232a; color:#fff; text-align:center;">
+<section class="hero-section reveal glass section-space" style="padding:3em 0; background: #20232a; color:#fff; text-align:center;">
     <div class="blob-bg">
         <img src="/blob.svg" alt="blob" aria-hidden="true" />
     </div>
@@ -22,7 +22,7 @@
     <a href="https://yourgumroadlink.com" target="_blank" class="btn hero-btn" style="background:#36d399; color:#20232a; font-weight:bold; border-radius:8px; padding:0.8em 2em; display:inline-block; margin-top:1.5em; font-size:1.2em;">Buy Now on Gumroad</a>
 </section>
 
-<section class="info-section reveal" style="padding:2em 0; background: #f6f8fa; color:#20232a;">
+<section class="info-section reveal glass section-space" style="padding:2em 0; background: #f6f8fa; color:#20232a;">
     <div class="info-cards" style="max-width:800px; margin:auto;display:flex;flex-wrap:wrap;gap:2em;">
         <div class="info-card" style="flex:1 1 300px;">
             <h2>What’s Included</h2>
@@ -48,78 +48,91 @@
     </div>
 </section>
 
-<section class="sneak-section reveal" style="padding:3em 0; background: #fff; text-align:center;">
+<section class="sneak-section reveal section-space">
     <h2>Sneak Peek</h2>
-    <img src="~/assets/folder_structure.png" alt="Folder structure" style="max-width:80%;box-shadow:0 3px 20px #6661;" class="sneak-folder">
-    <div class="sneak-images" style="margin:1em 0;display:flex;justify-content:center;gap:1.5em;flex-wrap:wrap;">
-        <img src="~/assets/snippet_in_vs.png" alt="VS Editor Example" style="max-width:300px;border-radius:10px;">
-        <img src="~/assets/snippet_in_vscode.png" alt="VS Code Example" style="max-width:300px;border-radius:10px;">
+    <div class="demo-code-glass">
+        <div class="code-header">
+            <span class="code-lang">C#</span>
+            <button class="copy-btn" onclick="copyDemoCode()">Copy</button>
+        </div>
+<pre id="demo-snippet"><code class="cs">
+public class WeatherResponse
+{
+    public DateTime Date { get; set; }
+    public float TempC { get; set; }
+    public string? Summary { get; set; }
+}
+
+// Usage
+var response = new WeatherResponse { Date = DateTime.Now, TempC = 22.5f, Summary = "Sunny" };
+</code></pre>
     </div>
 </section>
-<section class="features py-5 bg-light reveal">
+
+<section class="features py-5 bg-light reveal section-space ">
     <div class="container">
         <h2 class="text-center mb-4">Supercharge .NET Development</h2>
         <p class="lead text-center mb-5">
             Unlock efficiency, consistency, and simplicity with ready-to-use, high-quality C# snippets.
         </p>
         <div class="row g-4">
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-gear fa-2x"></i>
                 </div>
                 <h5>Rapid API Integration</h5>
                 <p>Effortlessly connect with RESTful services. Snippets for GET, POST, PUT, and authentication save you hours of setup.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fas fa-lock fa-2x"></i>
                 </div>
                 <h5>Secure Authentication</h5>
                 <p>Implement secure authentication flows—from JWT tokens to Azure AD—with best-practice, reusable code.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fas fa-database fa-2x"></i>
                 </div>
                 <h5>Reliable Data Access</h5>
                 <p>Streamline data access in Entity Framework or SQL. Robust, easy-to-adapt CRUD and connection snippets included.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-brands fa-superpowers fa-2x"></i>
                 </div>
                 <h5>Powerful String Operations	</h5>
                 <p>Simplify text parsing, formatting, and validation with concise, reusable string manipulation snippets.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-bug fa-2x"></i>
                 </div>
                 <h5>Robust Error Handling</h5>
                 <p>Improve stability with production-ready error handling, logging, and custom exception snippets.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-syringe fa-2x"></i>
                 </div>
                 <h5>Seamless Dependency Injection</h5>
                 <p>Set up testable, modular .NET apps quickly. Standard dependency injection patterns for services and repositories.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-wave-square fa-2x"></i>
                 </div>
-                <h5>Essential LINQ Queries	</h5>
+                <h5>Essential LINQ Queries 	</h5>
                 <p>Quickly filter, group, and transform data in memory with our curated set of must-have LINQ query snippets.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class=" feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-computer-mouse fa-2x"></i>
                 </div>
                 <h5>One-click Import</h5>
                 <p>Use out of the box in Visual Studio and VS Code thanks to pre-formatted snippet files.</p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-book fa-2x"></i>
                 </div>
@@ -128,7 +141,7 @@
                     Every snippet is commented and explained, with a comprehensive README to help you adapt and learn.
                 </p>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="feature-card col-md-4 text-center  reveal ">
                 <div class="feature-icon mb-3 text-primary">
                     <i class="fa-solid fa-infinity fa-2x"></i>
                 </div>
@@ -137,14 +150,13 @@
                     Get free updates as new .NET features emerge—your snippet pack keeps getting better.
                 </p>
             </div>
-            <!-- Continue for other features (String Ops, Error Handling, etc.) -->
         </div>
     </div>
 </section>
 @Html.Partial("_testimonials")
 @Html.Partial("_contact")
 
-<section class="faq-section reveal" style="background:#f6f8fa; padding:3em 0;">
+<section class="faq-section reveal glass section-space" style="background:#f6f8fa; padding:3em 0;">
     <div class="faq-inner" style="max-width:800px;margin:auto;">
         <h2>FAQ</h2>
         <h4>How do I use these snippets?</h4>

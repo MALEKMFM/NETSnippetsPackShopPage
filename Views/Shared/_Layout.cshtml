@@ -218,6 +218,20 @@
         })();
     </script>
 
+    <script>
+        function copyDemoCode() {
+          const code = document.getElementById("demo-snippet").innerText;
+          navigator.clipboard.writeText(code);
+          const btn = document.querySelector('.copy-btn');
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1300);
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
