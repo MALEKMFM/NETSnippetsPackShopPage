@@ -16,10 +16,10 @@
 
     <h1 class="hero-title"><span class="gradient-text">.NET Productivity</span> Snippet Pack</h1>
     <p class="hero-desc" style="font-size:1.3em; max-width:600px; margin:auto;">
-        20+ reusable C#/.NET code snippets for APIs, data, DI, and more. Copy, paste, and accelerate your workflow.<br>
+        50+ reusable C#/.NET code snippets for APIs, data, DI, and more. Copy, paste, and accelerate your workflow.<br>
         <strong>MIT licensed</strong> – Use in commercial projects.
     </p>
-    <a href="https://yourgumroadlink.com" target="_blank" class="btn hero-btn" style="background:#36d399; color:#20232a; font-weight:bold; border-radius:8px; padding:0.8em 2em; display:inline-block; margin-top:1.5em; font-size:1.2em;">Buy Now on Gumroad</a>
+    <a href="https://gumroad.com/checkout?_gl=1*23w1iu*_ga*MTg1OTA1NTQyNy4xNzQ2MjIyMDAw*_ga_6LJN6D94N6*czE3NDY5MTY5MTQkbzE0JGcxJHQxNzQ2OTE2OTE1JGowJGwwJGgw" target="_blank" class="btn hero-btn" style="background:#36d399; color:#20232a; font-weight:bold; border-radius:8px; padding:0.8em 2em; display:inline-block; margin-top:1.5em; font-size:1.2em;">Buy Now on Gumroad</a>
 </section>
 
 <section class="info-section reveal glass section-space" style="padding:2em 0; background: #f6f8fa; color:#20232a;">
@@ -28,12 +28,15 @@
             <h2>What’s Included</h2>
             <ul style="font-size:1.1em;list-style:square;">
                 <li>API & HTTP helpers</li>
-                <li>EF Core & Dapper data access</li>
-                <li>Authentication & DI</li>
+                <li>Authentication Security</li>
+                <li>Dependency Injection</li>
+                <li>Data Access</li>
+                <li>String Manipulation</li>
                 <li>Error handling & logging</li>
-                <li>LINQ power tricks</li>
+                <li>LINQ Queries</li>
                 <li>VS & VS Code importables</li>
                 <li>Clear, category-based folders</li>
+                <li>And More!</li>
             </ul>
         </div>
         <div class="info-card" style="flex:1 1 300px;">
@@ -48,7 +51,7 @@
     </div>
 </section>
 
-<section class="sneak-section reveal section-space">
+<section class="sneak-section reveal section-space" id="sneak-peek">
     <h2>Sneak Peek</h2>
     <div class="demo-code-glass">
         <div class="code-header">
@@ -56,7 +59,8 @@
             <button class="copy-btn" onclick="copyDemoCode()">Copy</button>
         </div>
 <pre id="demo-snippet"><code class="cs">
-public static async Task<string> PostJsonRequest<T>(string url, T payload)
+public static async Task<string> PostJsonReques
+    t<T>(string url, T payload)
 {
     using var client = new HttpClient();
     var response = await client.PostAsJsonAsync(url, payload);
@@ -65,6 +69,7 @@ public static async Task<string> PostJsonRequest<T>(string url, T payload)
 }
 // PostJsonRequest.cs
 // Sends a POST request with a JSON payload and returns the response string.
+
 </code></pre>
     </div>
 </section>
@@ -159,7 +164,7 @@ public static async Task<string> PostJsonRequest<T>(string url, T payload)
 <button onclick="window.scrollTo({top:0, behavior:'smooth'});" class="scroll-top-btn" title="Back to Top">↑</button>
 
 
-<section class="faq-section reveal glass section-space" style="background:#f6f8fa; padding:3em 0;">
+<section class="faq-section reveal glass section-space" style="background:#f6f8fa; padding:3em 0;" id="faq">
     <div class="faq-inner" style="max-width:800px;margin:auto;">
         <h2>FAQ</h2>
         <h4>How do I use these snippets?</h4>
@@ -175,8 +180,5 @@ public static async Task<string> PostJsonRequest<T>(string url, T payload)
 
 <footer style="padding:2em; text-align:center;">
     <p>© @DateTime.Now.Year - Malek Mshinesh · <a href="mailto:malekmshensh@gmail.com">Contact</a></p>
-    <small>
-        Not affiliated with Microsoft or the .NET Foundation.
-    </small>
 </footer>
 
