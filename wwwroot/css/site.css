@@ -189,6 +189,11 @@ html {
     box-shadow: 0 0 0 2px #8d7ff8bb;
 }
 
+.navbar-toggler:hover .navbar-toggler-icon, .navbar-toggler:focus .navbar-toggler-icon {
+    box-shadow: 0 0 0 3px #8d7ff8b5, 0 0 8px #3e92cc99;
+    opacity: 1;
+}
+
 @keyframes bgMove {
     0% {
         background-position: 0% 50%;
