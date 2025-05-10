@@ -40,7 +40,34 @@ html {
   min-height: 100%;
 }
 
+.scroll-top-btn {
+    position: fixed;
+    right: 30px;
+    bottom: 90px;
+    z-index: 13000;
+    background: #3e92cc;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.3em;
+    width: 44px;
+    height: 44px;
+    border: none;
+    box-shadow: 0 4px 16px #21295433;
+    opacity: 0.85;
+    transition: background .18s, color .13s;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
 
+    .scroll-top-btn.show {
+        display: flex;
+    }
+
+    .scroll-top-btn:hover {
+        background: #ffe066;
+        color: #232946;
+    }
 
 .glassy-nav, .tech-navbar {
     background: rgba(36, 61, 133, 0.65);

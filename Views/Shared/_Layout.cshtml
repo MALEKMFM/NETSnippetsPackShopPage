@@ -245,6 +245,12 @@
         });
     </script>
 
+    <script>
+        window.addEventListener('scroll', function() {
+          document.querySelector('.scroll-top-btn').classList.toggle('show', window.scrollY > 400);
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

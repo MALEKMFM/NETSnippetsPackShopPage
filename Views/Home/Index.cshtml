@@ -156,6 +156,9 @@ public static async Task<string> PostJsonRequest<T>(string url, T payload)
 @Html.Partial("_testimonials")
 @Html.Partial("_contact")
 
+<button onclick="window.scrollTo({top:0, behavior:'smooth'});" class="scroll-top-btn" title="Back to Top">↑</button>
+
+
 <section class="faq-section reveal glass section-space" style="background:#f6f8fa; padding:3em 0;">
     <div class="faq-inner" style="max-width:800px;margin:auto;">
         <h2>FAQ</h2>
@@ -167,6 +170,8 @@ public static async Task<string> PostJsonRequest<T>(string url, T payload)
         <p>Email me! I’ll be updating and expanding the pack based on feedback from early buyers.</p>
     </div>
 </section>
+
+
 
 <footer style="padding:2em; text-align:center;">
     <p>© @DateTime.Now.Year - Malek Mshinesh · <a href="mailto:malekmshensh@gmail.com">Contact</a></p>
