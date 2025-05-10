@@ -12,13 +12,13 @@ body,
 .btn.hero-btn,
 .version-badge,
 .carousel-item blockquote {
-    transition: background 0.7s cubic-bezier(.77,0,.18,1), color 0.7s cubic-bezier(.77,0,.18,1), box-shadow 0.6s cubic-bezier(.77,0,.18,1), border-color 0.6s cubic-bezier(.77,0,.18,1), opacity 0.35s linear;
+    transition: background 1s cubic-bezier(.77,0,.18,1), color 0.7s cubic-bezier(.77,0,.18,1), box-shadow 0.6s cubic-bezier(.77,0,.18,1), border-color 0.6s cubic-bezier(.77,0,.18,1), opacity 0.35s linear;
 }
 
 .gradient-text,
 .hero-title,
 .hero-desc {
-    transition: color 0.7s, text-shadow 0.7s, background 0.7s;
+    transition: color 1s, text-shadow 0.7s, background 0.7s;
 }
 
 html {
@@ -38,6 +38,155 @@ html {
 html {
   position: relative;
   min-height: 100%;
+}
+
+
+
+.glassy-nav, .tech-navbar {
+    background: rgba(36, 61, 133, 0.65);
+    box-shadow: 0 8px 30px 0 rgba(40, 80, 180, 0.12);
+    backdrop-filter: blur(14px) saturate(130%);
+    -webkit-backdrop-filter: blur(14px) saturate(130%);
+    border-bottom: 1.5px solid rgba(140,170,255,0.09);
+    padding-top: 0.7em;
+    padding-bottom: 0.65em;
+    box-shadow: 0 15px 30px 0 rgba(62,146,204,0.20), 0 0 24px 3px #8d7ff8cc;
+    /* Glow around nav (adjust colors/intensity to taste) */
+    border-bottom: 1.5px solid rgba(140,170,255,0.12);
+    /* Optional: animated glow pulse */
+    animation: navbarGlowPulse 2.8s infinite linear;
+    transform: scaleX(0);
+    transform-origin: center center;
+    opacity: 0;
+    transition: transform .77s cubic-bezier(.77,0,.18,1), opacity .55s;
+}
+
+    .tech-navbar.navbar-animate,
+    .glassy-nav.navbar-animate {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+@keyframes navbarGlowPulse {
+    0%, 100% {
+        box-shadow: 0 8px 30px 0 rgba(62,146,204,0.19), 0 0 32px 5px #8d7ff838, 0 0 0 transparent;
+    }
+
+    20% {
+        box-shadow: 0 8px 30px 0 rgba(62,146,204,0.25), 0 0 56px 15px #3e92cc66, 0 0 0 #ffe06633;
+    }
+
+    50% {
+        box-shadow: 0 8px 38px 0 rgba(62,146,204,0.18), 0 0 44px 13px #8d7ff894;
+    }
+
+    70% { /* peak glow */
+        box-shadow: 0 8px 38px 0 rgba(62,146,204,0.35), 0 0 66px 20px #3e92cc80;
+    }
+}
+
+.navbar-brand, .tech-gradient {
+    font-weight: bold;
+    font-size: 1.25em;
+    letter-spacing: 0.05em;
+    background: linear-gradient(92deg, #8d7ff8 23%, #3e92cc 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: #eebbc3 !important;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: color 0.2s, border-bottom 0.22s;
+    position: relative;
+    margin-right: 0.7em;
+    padding: 0.3em 0.66em;
+    border-radius: 7px;
+}
+
+    .nav-link:hover, .nav-link.active {
+        color: #ffe066 !important;
+        background: rgba(62,146,204,0.19);
+        text-shadow: 0 2px 16px #3e92cc45;
+    }
+
+.cta-btn {
+    background: linear-gradient(98deg, #8d7ff8 60%, #3e92cc 100%);
+    color: #232946 !important;
+    border-radius: 2em;
+    font-weight: 700;
+    font-size: 1.06em;
+    padding: 0.5em 1.4em 0.5em 1.4em;
+    box-shadow: 0 4px 18px #8d7ff824;
+    border: none;
+    margin-left: 0.7em;
+    transition: background .16s, color .13s, transform .14s;
+    letter-spacing: .02em;
+    display: inline-block;
+}
+
+    .cta-btn:hover, .cta-btn:focus {
+        background: #ffe066 !important;
+        color: #232946 !important;
+        transform: scale(1.08);
+    }
+
+@media (max-width: 991px) {
+    .navbar-nav {
+        background: rgba(36, 61, 133, 0.92);
+        padding: 1.5em 0.7em;
+        border-radius: 13px;
+        box-shadow: 0 8px 32px #3e92cc0e;
+        margin-top: 0.8em;
+        text-align: center;
+    }
+
+    .cta-btn {
+        margin-top: 1.1em;
+    }
+}
+
+.nav-link:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2.5px;
+    margin: 0 auto;
+    background: linear-gradient(92deg, #8d7ff8 60%, #3e92cc 100%);
+    border-radius: 1px;
+    transition: width 0.5s;
+}
+
+.nav-link:hover:after, .nav-link.active:after {
+    width: 70%;
+}
+
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0.375rem 0.75rem;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath stroke='rgba(62,146,204,0.97)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M7 9h18M7 16h18M7 23h18'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    width: 2em;
+    height: 2em;
+    border-radius: 6px;
+    opacity: 0.93;
+    transition: box-shadow .2s;
+}
+
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon {
+    box-shadow: 0 0 0 2px #8d7ff8bb;
 }
 
 @keyframes bgMove {
@@ -69,14 +218,33 @@ html {
     justify-content: flex-end;
 }
 
-.blob-bg img, .blob-bg svg{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    opacity: 0.18;
-}
+    .blob-bg img, .blob-bg svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        opacity: 0.18;
+        transform-origin: 20% 70%; /* adjust as needed for right/top */
+        animation: blobPulse 5s ease-in-out infinite;
+    }
 
+@keyframes blobPulse {
+    0%,100% {
+        transform: scale(1) translateY(0);
+    }
+
+    30% {
+        transform: scale(1.03) translateY(-8px);
+    }
+
+    60% {
+        transform: scale(0.94) translateY(2px);
+    }
+
+    80% {
+        transform: scale(1.02) translateY(-10px);
+    }
+}
 .typewriter-tagline {
     font-family: 'Fira Mono', 'Noto Mono', 'Consolas', monospace;
     color: lightskyblue;
@@ -611,6 +779,90 @@ body.light-mode {
         color: #3e92cc !important;
     }
 
+    body.light-mode .demo-code-glass {
+        background: linear-gradient(120deg,#f5f7fa 0%,#dbe5ef 100%);
+        color: #232946 !important;
+        border: 1.3px solid #8d7ff833;
+        box-shadow: 0 7px 28px #3e92cc11;
+    }
+
+        body.light-mode .demo-code-glass pre,
+        body.light-mode .demo-code-glass code {
+            background: transparent !important;
+            color: #25264e !important;
+        }
+
+    body.light-mode .code-lang {
+        background: #3e92cc !important;
+        color: #fff !important;
+    }
+
+    body.light-mode .copy-btn {
+        background: #e9eafc !important;
+        color: #232946 !important;
+        border: 1.3px solid #8d7ff826 !important;
+    }
+
+        body.light-mode .copy-btn:hover,
+        body.light-mode .copy-btn.copied {
+            background: #3e92cc !important;
+            color: #fff !important;
+        }
+
+    body.light-mode .sneak-section {
+        background: #fff !important;
+        color: #232946 !important;
+    }
+
+        body.light-mode .sneak-section h2 {
+            color: #3e92cc !important;
+            text-shadow: none !important;
+        }
+
+    body.light-mode .tech-navbar,
+    body.light-mode .glassy-nav {
+        background: rgba(250,250,255, 0.92) !important;
+        box-shadow: 0 8px 20px 0 #3e92cc18;
+        border-bottom: 1.5px solid #3e92cc12;
+    }
+
+    body.light-mode .navbar-brand,
+    body.light-mode .tech-gradient {
+        background: linear-gradient(92deg, #3e92cc 10%, #232946 90%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        color: transparent !important;
+    }
+
+    body.light-mode .nav-link,
+    body.light-mode .cta-btn {
+        color: #3e92cc !important;
+        background: transparent !important;
+        text-shadow: none !important;
+    }
+
+        body.light-mode .nav-link:hover,
+        body.light-mode .nav-link.active {
+            color: #232946 !important;
+            background: #e3f1fd !important;
+        }
+
+    body.light-mode .cta-btn {
+        background: linear-gradient(90deg, #ffe066 40%, #3e92cc 100%) !important;
+        color: #232946 !important;
+        font-weight: bold;
+        border: none;
+    }
+
+        body.light-mode .cta-btn:hover, body.light-mode .cta-btn:focus {
+            background: #232946 !important;
+            color: #ffe066 !important;
+        }
+
+    body.light-mode .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath stroke='rgba(35,41,70,0.92)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M7 9h18M7 16h18M7 23h18'/%3E%3C/svg%3E");
+    }
 .glass {
     position: relative;
     /* Techy blue-tinted glass background */
